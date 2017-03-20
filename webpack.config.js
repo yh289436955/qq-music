@@ -11,8 +11,8 @@ module.exports = {
     },
     //编译后出口文件
     output : {
-        path :  __dirname + '/buit',
-        filename : 'js/[name].js'
+        path :  __dirname + '/buit/js',
+        filename : '[name].js'
     },
     //模板
     module : {
@@ -40,7 +40,7 @@ module.exports = {
     },
     //本地服务器配置
     devServer : {
-        contentBase : './buit',      //本地服务器所加载的页面所在的目录
+        contentBase : './buit/js',      //本地服务器所加载的页面所在的目录
         historyApiFallback : true,      //单页开发不跳转
         inline : true,                    //实时刷新
         hot : true,

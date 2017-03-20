@@ -1,17 +1,18 @@
-/**
- * Created by Administrator on 2017/3/9.
- */
-import React from 'react';
-import  Public from './bottom.js'
-class Souye extends React.Component{
-    render() {
+import React from 'react'
+import Public from './bottom.js';
+class Souye extends React.Component {
+    render (){
         return (
-            <div>
-                <Public is_name="首页" />
-                <h2>暂时不知道怎么写呢</h2>
+            <div className="body-souye">
+                <Public />
+                <div className="souye-content">
+
+                    <h2>111111</h2>
+                </div>
             </div>
         )
     }
 }
 
-export default  Souye;
+
+export default Souye;

@@ -3,16 +3,21 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { hashHistory, Route, Router ,IndexRoute,Link} from 'react-router';
-import Souye from 'js/souye.js';         //首页界面
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
+const history = createBrowserHistory();
+import Souye from './souye.js';         //首页界面
+import My from './my.js';
+import '../css/index.less';
+
+
 ReactDOM.render((
-    <Router history={hashHistory}>
-        <Route path="/" component={Souye}>
-            <IndexRoute component={Souye}/>
-        </Route>
-        <Route path="/find" component={Find}></Route>
-        <Route path="/minutes" component={Minutes}></Route>
-        <Route path="/news" component={News}></Route>
-        <Route path="/my" component={My}></Route>
+    <Router history={history}>
+        <div className="body-index">
+            <Route exact path="/" component={Souye}/>
+            <Route path="/my" component={My}/>
+        </div>
     </Router>
 ),document.getElementById("index"));
+
+
