@@ -28,12 +28,16 @@ module.exports = {
                 test : /\.less/,
                 loader: ExtractTextPlugin.extract({
                     fallback : "style-loader",
-                    use :   "css-loader!less-loader"
+                    use :   ["css-loader","postcss-loader","less-loader?importLoaders=1"]
                 })
+            },
+            {
+                test : /\.less/,
+                loader : "less-loader"
             },
             //图片路径
             {
-                test: /\.(png|jpg|gif)$/,
+                test: /\.(png|jpg|gif|mp3)$/,
                 loader: 'url-loader?limit=8192&name=img/[name].[ext]'
             }
         ]
