@@ -7,42 +7,58 @@ class PlayControl extends React.Component {
     constructor (props){
         super(props);
         this.state = {
-            music : props.playControls
+            playControls : props.playControls,
+            is_play : true
         }
-    }
+    };
+    //播放和暂停控制
+    play (){
+        var audio = document.getElementById("audio");
+        //判断是否播放音乐
+        if (this.state.is_play)
+        {
+            audio.play();
+            this.setState({
+                is_play: false
+            })
+        }
+        else
+        {
+            audio.pause();
+            this.setState({
+                is_play : true
+            })
+        }
+    };
+    componentWillReceiveProps (nextProps){
+        this.setState({
+            playControls: nextProps.playControls,
+            is_play : true
+        },function () {
+            //判断父级传来的值发生改变后才进行播放
+            if (nextProps.playControls.is_play)
+            {
+                this.play();
+            }
+        });
+    };
     render (){
-        // var textArr = [];
-        // for (let i in this.state.music)
-        // {
-        //     let that = this.state.music[i];
-        //     textArr.push(
-        //         <div className="Control-left" key={i}>
-        //             <div className="Control-cove">
-        //                 <img src={that.imgUrl} alt=""/>
-        //             </div>
-        //             <div className="Control-name">
-        //                 <p>{that.name}</p>
-        //                 <p>左右滑动切换歌曲</p>
-        //             </div>
-        //         </div>
-        //     )
-        // }
         return (
             <div className="Play-Control clear">
                 <div className="Control-left clear">
                     <div className="Control-cove">
-                        <img src={this.state.music.imgUrl} alt=""/>
+                        <img src={this.state.playControls.imgUrl} alt=""/>
                     </div>
                     <div className="Control-name">
-                        <p>{this.state.music.name}</p>
+                        <p>{this.state.playControls.name}</p>
                         <p>左右滑动切换歌曲</p>
                     </div>
                 </div>
                 <div className="Control">
-                    <a href="javascript:void(0)" className="playControl"></a>
+                    <a href="javascript:void(0)" className={this.state.is_play == true ? "playControl" : "suspendControl"} onClick={this.play.bind(this)}></a>
                     <a href="javascript:void(0)" className="musicList"></a>
                 </div>
-                <audio id="audio" src={this.state.music.musicUrl}></audio>
+                <audio id="audio" src={this.state.playControls.musicUrl} preload={true}  ></audio>
             </div>
         )
     }

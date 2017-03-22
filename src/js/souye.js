@@ -1,7 +1,8 @@
 import React from 'react'
-import Public from './bottom.js';
+// import Public from './bottom.js';
 import Play from './playcontrols.js';
 import {NavLink} from 'react-router-dom';
+import Music from './music.js';
 //头像位置
 class Head_portrait extends React.Component {
     constructor (props){
@@ -97,18 +98,27 @@ class Radiolist extends React.Component {
         super(props);
         this.state = {
             radio : props.radio,
-            is_play : true
+            is_play : true,
+            playControls : {
+                name : "河流",                                //设置音乐名称
+                imgUrl : require('../img/music_cove2.jpg'),      //设置音乐封面
+                musicUrl : require('../mp3/河流.mp3'),        //设置音乐
+                is_play : true
+            }
         };
     };
     Isplay (){                      //点击播放和暂停按钮
+        var audio = document.getElementById("audio");
         if (this.state.is_play)
         {
+            this.props.callbackParent(this.state.playControls);
             this.setState({
                 is_play: false
             })
         }
         else
         {
+            audio.pause();
             this.setState({
                 is_play: true
             })
@@ -197,11 +207,13 @@ class SongSheet extends React.Component {
     };
 };
 
-//输出界面
-class Souye extends React.Component {
+
+//我的----页面
+class My extends React.Component {
     constructor (props){
         super(props);
         this.state = {
+            //头像定义
             Head : {
                 head : require('../img/head.jpg'),
                 is_login : true,
@@ -209,6 +221,7 @@ class Souye extends React.Component {
                 name : 'foreach',
                 green_brick : false
             },
+            //列表
             list : {
                 local : {
                     sum : 100                   //设置本地音乐歌曲数量
@@ -229,6 +242,7 @@ class Souye extends React.Component {
                     sum : 0                     //设置已购音乐数量
                 }
             },
+            //电台列表
             Radiolist : {
                 radio : [
                     {
@@ -243,6 +257,7 @@ class Souye extends React.Component {
                     }
                 ]
             },
+            //我的歌单列表
             SongSheet : {
                 list : [
                     {
@@ -276,22 +291,88 @@ class Souye extends React.Component {
                 ],
                 Sum : 9
             },
+        };
+    };
+    changPlay (val){
+        this.props.callbackParent(val);
+    };
+    render (){
+        return (
+            <div>
+                <Head_portrait head={this.state.Head} />
+                <List list={this.state.list} />
+                <Radiolist radio={this.state.Radiolist.radio} callbackParent={this.changPlay.bind(this)} />
+                <SongSheet Sheet={this.state.SongSheet} />
+            </div>
+        )
+    };
+}
+
+//输出界面
+class Souye extends React.Component {
+    constructor (props){
+        super(props);
+        this.state = {
+            is_action : "my",                                   //设置默认选中的界面
+            Arr : "",                                            //设置变量来装当前是哪一个界面
             playControls : {
-              name : "I Am you",                                //设置音乐名称
+              name : "倩女幽魂",                                //设置音乐名称
               imgUrl : require('../img/music_cove.jpg'),      //设置音乐封面
               musicUrl : require('../mp3/倩女幽魂.mp3'),        //设置音乐
+              is_play : false
             }
         };
+    };
+    componentWillMount (){
+        this.switch("music");
+    };
+    changPlay (playControls){
+        this.setState({
+            playControls :playControls
+        });
+    };
+    //页面之间的切换
+    switch (val){
+        this.setState({
+            is_action : val
+        });
+        switch (val)
+        {
+            case "my" :
+                this.setState({
+                    Arr : <My callbackParent={this.changPlay.bind(this)}/>
+                });
+                break;
+            case "music" :
+                    this.setState({
+                        Arr : <Music />
+                    })
+                break;
+            case "find" :
+                break;
+            default :
+                this.setState({
+                    Arr : <My callbackParent={this.changPlay.bind(this)}/>
+                });
+                break;
+
+        }
     };
     render (){
         return (
             <div className="body-souye">
-                <Public />
+                <div className="index_bottom">
+                    <ul className="clear">
+                        <li><a href="javascript:void(0)"></a></li>
+                        <li><a href="javascript:void(0)" className={this.state.is_action == "my" ? "action" : ""} onClick={this.switch.bind(this,"my")}>我的</a></li>
+                        <li><a href="javascript:void(0)" className={this.state.is_action == "music" ? "action" : ""} onClick={this.switch.bind(this,"music")}>音乐馆</a></li>
+                        <li><a href="javascript:void(0)" className={this.state.is_action == "find" ? "action" : ""} onClick={this.switch.bind(this,"find")}>发现</a></li>
+                        <li><NavLink to="/my" className="shiqu"></NavLink></li>
+                    </ul>
+                    <div><NavLink to="/my"><span></span>搜索</NavLink></div>
+                </div>
                 <div className="souye-content">
-                    <Head_portrait head={this.state.Head} />
-                    <List list={this.state.list} />
-                    <Radiolist radio={this.state.Radiolist.radio} />
-                    <SongSheet Sheet={this.state.SongSheet} />
+                    {this.state.Arr}
                 </div>
                 <Play playControls={this.state.playControls} />
             </div>
