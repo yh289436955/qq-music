@@ -173,6 +173,7 @@ input[type=radio]:focus{-webkit-appearance: radio;}
 //页面布局
 body {
   overflow: hidden;
+  -webkit-overflow-scrolling : touch;
   #index {
     width: 100%;
     height: 100%;
@@ -195,6 +196,7 @@ body {
           bottom: 0;
           width: 100%;
           overflow: auto;
+          padding-bottom: 70px;
           //首页--我的界面样式开始
           .souye-head {         //头像样式
             width: 100%;
@@ -386,7 +388,6 @@ body {
           .souye-songSheet {      //我的歌单
             width: 100%;
             background: #FFFFFF;
-            padding-bottom: 70px;
             .songSheet-title {
               width: 100%;
               height: 50px;
@@ -466,24 +467,167 @@ body {
           .music-banner {
             width: 100%;
             height: 150px;
-            overflow: auto;
+            overflow: hidden;
             .banner-hua {
               position: relative;
               width: 100%;
-              height: 100%;
+              height: 150px;
               left: 0;
               top:0;
+              transition:left 2s;
+              /* Firefox 4 */
+              -moz-transition:left 2s;
+              /* Safari and Chrome */
+              -webkit-transition:left 2s;
+              /* Opera */
+              -o-transition:left 2s;
               .banner-img {
                 position: absolute;
                 width: 100%;
-                height: 100%;
+                height: 150px;
                 top:0;
                 left: 0;
                 span {
+                  display: inline-block;
+                  width: 100%;
+                  height: 150px;
+                }
+              }
+            }
+          }
+          .banner-list {
+            width: 100%;
+            background: #FFFFFF;
+            ul {
+              padding: 10px 0;
+              li {
+                width: 33%;
+                float: left;
+                margin: 10px 0;
+                a {
+                  color: #333333;
+                  img {
+                    width: 25px;
+                    margin: 0 5px 0 15%;
+                  }
+                }
+              }
+            }
+          }
+          .banner-recommendation {
+            width: 100%;
+            background: #FFFFFF;
+            .recommendation-title {
+              width: 100%;
+              height: 50px;
+              line-height: 50px;
+              text-align: center;
+              position: relative;
+              h3 {
+                font-size: 18px;
+                color: #333333;
+                font-weight: 400;
+              }
+              img {
+                position: absolute;
+                top: 12px;
+                right: 10px;
+              }
+            }
+            ul {
+              li {
+                float: left;
+                width: 33.3%;
+                margin: 15px 0;
+                a {
+                  width: 99%;
+                  display: block;
+                  margin: 0 auto;
+                  position: relative;
+                  >img {
+                    width: 100%;
+                    height: 100px;
+                    display: block;
+                    margin: 0 auto;
+                  }
+                  p {
+                    height: 42px;
+                    overflow:hidden;
+                    text-overflow:ellipsis;
+                    display:-webkit-box;
+                    -webkit-box-orient:vertical;
+                    -webkit-line-clamp:2;
+                    padding: 0 3px;
+                    color: #333;
+                  }
+                  span {
+                    position: absolute;
+                    top:75px;
+                    left: 5px;
+                    color: #FFFFFF;
+                    font-size: 12px;
+                    img {
+                      width: 15px;
+                      margin-right: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .banner-everyday {
+            width: 100%;
+            background: #FFFFFF;
+            .everyday-title {
+              width: 100%;
+              height: 50px;
+              line-height: 50px;
+              text-align: center;
+              position: relative;
+              h3 {
+                font-size: 18px;
+                color: #333333;
+                font-weight: 400;
+              }
+              img {
+                position: absolute;
+                top: 12px;
+                right: 10px;
+              }
+            }
+            ul {
+              li {
+                width: 100%;
+                height: 80px;
+                padding-bottom: 5px;
+                a {
                   display: block;
                   width: 100%;
                   height: 100%;
-                  background-size: 100% 100% !important;
+                  .everyday-left {
+                    float: left;
+                    width: 20%;
+                    height: 100%;
+                    img {
+                      min-width: 100%;
+                      max-width: 100%;
+                      min-height: 100%;
+                      max-height: 100%;
+                    }
+                  }
+                  .everyday-right {
+                    width: 75%;
+                    height: 100%;
+                    float: right;
+                    p:first-child{
+                      padding-top: 20px;
+                      font-size: 16px;
+                      color: #333333;
+                    }
+                    p:last-child {
+                      color: #999999;
+                    }
+                  }
                 }
               }
             }

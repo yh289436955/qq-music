@@ -9,7 +9,6 @@ const history = createBrowserHistory();
 import Souye from './souye.js';         //首页界面
 import '../css/index.less';
 
-
 ReactDOM.render((
     <Router history={history}>
         <div className="body-index">

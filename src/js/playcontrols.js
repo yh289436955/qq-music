@@ -33,12 +33,16 @@ class PlayControl extends React.Component {
     componentWillReceiveProps (nextProps){
         this.setState({
             playControls: nextProps.playControls,
-            is_play : true
         },function () {
             //判断父级传来的值发生改变后才进行播放
             if (nextProps.playControls.is_play)
             {
-                this.play();
+                this.setState({
+                    is_play : true
+                },function () {
+                    this.play();
+                });
+
             }
         });
     };
@@ -55,6 +59,7 @@ class PlayControl extends React.Component {
                     </div>
                 </div>
                 <div className="Control">
+
                     <a href="javascript:void(0)" className={this.state.is_play == true ? "playControl" : "suspendControl"} onClick={this.play.bind(this)}></a>
                     <a href="javascript:void(0)" className="musicList"></a>
                 </div>

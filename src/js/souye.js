@@ -313,6 +313,7 @@ class Souye extends React.Component {
     constructor (props){
         super(props);
         this.state = {
+            Stop : false,                                        //停止音乐馆里面的定时器
             is_action : "my",                                   //设置默认选中的界面
             Arr : "",                                            //设置变量来装当前是哪一个界面
             playControls : {
@@ -333,30 +334,31 @@ class Souye extends React.Component {
     };
     //页面之间的切换
     switch (val){
-        this.setState({
-            is_action : val
-        });
-        switch (val)
-        {
-            case "my" :
-                this.setState({
-                    Arr : <My callbackParent={this.changPlay.bind(this)}/>
-                });
-                break;
-            case "music" :
+        this.setState({                         //赋值当前点击的是哪一个界面
+            is_action : val,
+        },function () {
+            switch (val)
+            {
+                case "my" :
                     this.setState({
-                        Arr : <Music />
+                        Arr : <My callbackParent={this.changPlay.bind(this)}/>
+                    });
+                    break;
+                case "music" :
+                    this.setState({
+                        Arr : <Music stop={this.state.Stop} />
                     })
-                break;
-            case "find" :
-                break;
-            default :
-                this.setState({
-                    Arr : <My callbackParent={this.changPlay.bind(this)}/>
-                });
-                break;
+                    break;
+                case "find" :
+                    break;
+                default :
+                    this.setState({
+                        Arr : <My callbackParent={this.changPlay.bind(this)}/>
+                    });
+                    break;
 
-        }
+            }
+        });
     };
     render (){
         return (
