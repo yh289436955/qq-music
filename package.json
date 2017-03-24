@@ -30,7 +30,8 @@
     "style-loader": "^0.14.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-loader-options-merge": "0.0.3"
   },
   "bugs": {
     "url": "https://github.com/yh289436955/qq-music/issues"

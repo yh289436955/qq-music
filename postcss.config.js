@@ -5,7 +5,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css/,
+                test: /\.less/,
                 use: [
                     {
                         loader: 'postcss-loader',

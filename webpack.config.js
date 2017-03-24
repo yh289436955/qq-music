@@ -28,14 +28,14 @@ module.exports = {
                 test : /\.less/,
                 loader: ExtractTextPlugin.extract({
                     fallback : "style-loader",
-                    use :   ["css-loader","postcss-loader","less-loader?importLoaders=1"]
+                    use :   ["css-loader","less-loader?importLoaders=1","postcss-loader"]
                 })
             },
-            {
-                test : /\.less/,
-                loader : "less-loader"
-            },
-            //图片路径
+            // {
+            //     test : /\.less/,
+            //     loader : "less-loader"
+            // },
+            //文件格式
             {
                 test: /\.(png|jpg|gif|mp3)$/,
                 loader: 'url-loader?limit=8192&name=img/[name].[ext]'
@@ -56,6 +56,5 @@ module.exports = {
         new ExtractTextPlugin("css/[name].css"),//则会生成一个less文件
         // 当模块热替换（HMR）时在浏览器控制台输出对用户更友好的模块名字信息
         new webpack.NamedModulesPlugin(),
-
     ],
 }
