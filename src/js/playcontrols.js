@@ -69,4 +69,5 @@ class PlayControl extends React.Component {
     }
 };
 
+
 export default PlayControl;          //抛出去

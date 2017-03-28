@@ -204,6 +204,9 @@ body #index .body-index .body-souye {
   font-size: 16px;
   color: #fff;
 }
+.index_bottom ul li .action {
+  font-weight: 600;
+}
 .index_bottom > div {
   height: 30px;
   padding: 0 5px;
@@ -227,8 +230,76 @@ body #index .body-index .body-souye {
   margin-right: 5px;
   margin-bottom: 4px;
 }
+.Play-Control,
+body #index .body-index .body-souye {
+  position: fixed;
+  width: 100%;
+  height: 71px;
+  bottom: 0;
+  left: 0;
+  background: #FFFFFF;
+  border-top: 1px solid #CCCCCC;
+}
+.Play-Control .Control-left {
+  float: left;
+  width: 70%;
+  height: 100%;
+}
+.Play-Control .Control-left .Control-cove {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+.Play-Control .Control-left .Control-cove img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  margin: 10px auto;
+}
+.Play-Control .Control-left .Control-name {
+  width: 75%;
+  height: 100%;
+  float: right;
+  padding-top: 15px;
+}
+.Play-Control .Control-left .Control-name p:first-child {
+  color: #333333;
+}
+.Play-Control .Control-left .Control-name p:last-child {
+  color: #31c27c;
+}
+.Play-Control .Control {
+  float: right;
+  width: 30%;
+  height: 100%;
+  padding-top: 19px;
+  text-align: center;
+}
+.Play-Control .Control .playControl {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADZ0lEQVRYR8VXS3LaQBB9LaS1yQmCT2CxTKUs4ATGJ4hzgsAuFVNlqBKp7IJPEPsEUU7AJ5XKkvEJQm6AtwGpUz1CsgDBCNupaKuZntevX/8IB3zupNME+AygCpjLROTKdWZWIJoDPAMQKK//rahZMh10f76vYFG6AlOTCGXT+RgQ5iAOEDpt1ejO993ZC8Add7oA3mUevmNGAAsjWNFcvf6oxLj744OLyCojQp0ITQAnKRALA3Xq93aByAXgDrtlWIthSjH4Fk7YVa8+CcXGb8Val0Bv0hBFTiOPjS0A2pulNYy95t9MdKFO/ZHx1ZwD7vdOnZhvAHqpw2JHjYS15PgagNjz5S95nIExQrtpiqEJmLZZWgYE1DSIyD7O2kwBZGmXx5Xn103GD/lfnXRELyeSMarWr24xIIIjwpWmPXTcp3q+CU4cpNJCrcLRUzVfBA7NgBbNH3uqqSc0HhtzEyOxJjDMhiIGMLm8EcUy+FZ5/Yt9huJiBCjPD0wP5v3ffEsDqI4v5yA6Ymd5bEq16qTDOrWAEUpRe1PVJlDCNi3sX8KCqvkvSDwi4CuAu6nn69K670sAJGcYPEDo9A7RTCpI4JxSShipMA4BEBcaSLntqpp/bXJAh3wleGZcCwMjnaMFxbfJQPZB3ZQsaptEnIoRGFNKRymqFonnPgAPYUEAZ9nepSepthRaUwEsALSopp5v7IxasKvzJqrzql72TmLnnwEA8z1HTmWXOLMA4hL5rCHY3z2TEEjmPasIxSATWgeJ8DnSUNNN6CqvPzBpIy8NdSHa7FK7DG0VIsY1Irv76EL0hFI8RilqFUndrDNJKRbWprV++X80o4BAZ0njiwFIr7YWM92QClbEIrHePJNUwGyKPkxEaX3mGSKnekhMi4BZTVxTIqpwpu+sVb9Mlxopz28UMVz0TGJ7s+tuDaVpKKTfh/b5U5lYG/FzqmPuWE5LGmk9MM9g0VtTYdnFgsQcEX8R2nXcba7vHcsTQ/EAuZRdIN5wwDdwwp5pWkrv63XO/kzQW5J8dxza9UKLyVrOijDBLWEjHjx0vw+IacSl8D67mlFYOmJi8biZbFTaa9AgmYDzmDK24HixWAyI0UyAGIUXl2ZZTlsmDRkBrDESr+dNWc8JelPWIdIUA3MwFAiSQYUn5r9jDFFnmAaSeAAAAABJRU5ErkJggg==);
+}
+.Play-Control .Control .suspendControl {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADFUlEQVRYR82XTW7aQBTH/8+YbpOcoOkJGJZVVRtOEHqCwA3orgpIoZIddVdygpAb0BOEOKq6ZHKC0hOEbIPNq8b2gAEb46Qo9XI+3vzmfcz7m/DKHxU9X9z0DqkUVJhZwMBhuH+OKRFJDkr3st6bFrG5E4A6FIZ/CkKDgNq2AxgYgTGUtnO5C0gugPDOmmA6J6Lj2OA9M4YgnoJIhmPKG0yHRGgAqERDPAHQk7Z7vQ0kEyC8dcm/IqAB5kcG9TE3+3kujr3VJnAbRAcMDBGYrax9qQCRkdkNEQkGblH2m/L9N3WjnT/x68sxZuaAAJuZJeblehrEBsDq4XwtLbe586kpC4XXGRDoNAtiE8DrDAl0wnj54ZpnAQEMpeV8SnKuAKiEIxhXyu3ScrZme1GvCK87CsOBeUtaFwO9fwEQu35MwBG/CUTRmOcBqZygp5Jk4EHa7rtNAK/TJtB3ZnyVttPLMih+ngkExrG0nGFyjfC6qgSxPr6y5rbbI8I5gz9Ly+2ruaUHtIsC82hbqSlXglGRtnOUNF71upwXuugV9R8Y/ENabggcAugJAPdjyxHb3KljObaclfzZBUDZrXpd9XhVOL5oBHDXrRHjJs/94drYU88FEDoMhLr86KjEVEbj+Cdik5kD/wogroYIYI1qnyFY9/Z/AvDqIXj1JNT1ySyl7Vb3mQOpZZgsL12f+6iC8Dmemb83HqKVUnzuU3zXrcGYT+WHi0glpbXmbU9x9Ep1Jsx0gDd+dR/NCE/mmIgfx5ar5d2yF0ReWLTjkbScel6HKzKf2461MbEUJANpua0ih2TnTayKEk1Ir02VZFTyR2HDAL8YQqsh1eg4MGvrnTZTlC4hMELZbxXNiViUKlWtlFXq4St6YN19kSyfKUF5wowpDPThm5e5slypYd88JUYoalTJISg3C8nyJEyUmNQD6G1oUElsg4b6dywcI47045wbSspH+/kPg3tJ/ZeWI7l/RonkbAOoKY9sS8zwxsBIS668JN4ZYAGiQmP6Qv+OheM0n4CMCXxT5oVoHagwQN6Nis7/BZlnQD9oqmZGAAAAAElFTkSuQmCC);
+}
+.Play-Control .Control .musicList {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACfElEQVRYR+1XS07bUBQ9xzidNjuArqAvw6qqE1ZAWAHpCmBYEUs1kkGdka6gZAU1K0hiVHWYxwrKEsKUGN/qGRwMshPHdRED3tTX955z3v094hmP+v1lCzf2FMBQt/0DE5ppfDVxPRJf68IjIlewZVd/PNGLGBduh4KRABPt+J3HAMJ+QHCnLgDGjyD+rJ2Ts1IAjJG6cBNUtRwrnmXZp/4LFagl6AonhuArgOIk/HWoEFv1JWGMGWJ7qLe9WakkVKE7JtCuMxfWqgIVul0IVJ0AENuD0grUGrjA2WsVvGwFVIVZICJat49bZfNnqQJq4g5I7Jd1dm93OXX80pXzsq9gTea55mrkNWHNd0DTT/igDDGGFZ8jtpr/ZRglge1oHzEOSDSLyJicIalyF5KqCigzQyL+JLl1t4TIEGAAYqY/+eNkxxBRFHgg397Z5G5Ehz3A2isEQhwZh9nvKjzsEdaPxKngO2Lby7beR7Yjr8mNyPz/vgDA8mFkAqSLZLLdJMytESEUsqcdP1ilYgo4H4DZWCM7kTH3RLbOsmuF/SuAm08n3jIQZivm3P7zzznwwESG2jnurWJeah8o6ySR/353EGL7aV4sVSDsHxA8FcGRbvuesV28C9YB0ApdMfZTx1/r/8W1NaJ3+sO3q2cFoML+GcE9U6bZa1uLQapSa9KfmZqWDJOl0qdzRuRa4sZWNpkrAXhgg0A7/m5R8OQtOLdPCXRhgtvSefpYqQbAlNPNhk5UAMaADLRzfL7oD7fcBNAlmFbIpTSibnrvWcCVAKSBGHGcttdcFQxrcJBmfJ5NZQAJCDOENuY9gN3FSm+CmukHCXD7JihqzSmYvzaDmDBS5MAWAAAAAElFTkSuQmCC);
+  margin-left: 20%;
+}
 body {
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
 }
 body #index {
   width: 100%;
@@ -252,10 +323,10 @@ body #index .body-index .body-souye .souye-content {
   bottom: 0;
   width: 100%;
   overflow: auto;
+  padding-bottom: 70px;
 }
 body #index .body-index .body-souye .souye-content .souye-head {
   width: 100%;
-  height: 170px;
   padding-top: 10px;
   text-align: center;
   background: #FFFFFF;
@@ -365,13 +436,56 @@ body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Rad
 }
 body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Radiolist-img .play {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABRklEQVQ4T62UUZECMRBEux0gAQlIQAIScHCcAxwADpDAKTgcHDhAwjloqrcmqSyb7ELVzg8fJG97ejpDzFycmYcmUNISwBeANZDPCcAVwInkoyamCpR0BLACcCR5KS9K2gDYAfgj+f0KHQAl3QJ0HrND0tZgkv5wrh4wlN1IjsLS7YCuSFpxVxkYnp1J2rNcknz40vJMkj3dpv9LoH27lp5JMtytLexZDOO/4uk6qSyBbrXnRwB9eF8MY0/Sqsou8t23gb4tyUrtr6EeXlceZBLzKdB+djaQzK1/DPRQHCWrqyWgBawNxa/FMLfnzPUGEu066NWh+PIgNlNvvRmb+JpVPkj6d7Iio8tqsIuJucVfkqcxYsA8nPbTK6BpORxI/lSC7C10L5UNnt6rmniKjokVOH9eXY6ZQ+0t9P76mjRv5MDsG/sJFs+8FVrgo48AAAAASUVORK5CYII=);
+  background-size: 25px 25px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Radiolist-img .suspend {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAABKklEQVQ4T7WV0XHCMBBE33ZAOqAEdxBKIBUkJZAOSAVJCVABpAM6iEtIByEVHLMeySN7bMAz5v4k761udae1GImIeAOegQr4T7AF8AMcJX0Ppaq/GRFrYOskYCfpt8RExBLwYQ1OknFtdAgj4gtwFRtJ57HqvR8Rxhn/J+k9Y1vCRHaW5OrujogwfiFp46SGMMlcS7KUyRERu3Svx0xYA6tbMq800PJPkiqlbi7HpLr68uL763xIkl6b0OW6W51uFkCfvBpbF/vu/taEtUu9IucuwtSLpsJOwsBcTiE8PYRwdsmzN8VvspptbHJ3Zhvshzy9RJqd42PKYx40h2Lap9rXp803O03rNj0DzQZ7APYjBvsKvNw02AHiZgJsounbE2Bn8i+g49Q59wIG2e79es6Y1wAAAABJRU5ErkJggg==);
+  background-size: 25px 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Radiolist-img .Run {
+  display: block;
+  width: 25px;
+  height: 25px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACcUlEQVRIS62WwXETURBEuyMAIkCOAIjAdgTYEdhEgInAIgMTAfKF4oa5U4WIAPvAGXPiiDlzGOpJ87f+rv/uoirmotL+1fR0T898WTMREUeSnktaSHoq6aGkO0nXkm4lXdn+OJXGY4cRcSrpXNINiUhoe13ej4iDBC2f57YvW/nugUQElX6W9FvSqW2qnYyIgOVK0gNJh7Zh2kUPJCKQA4BXtvnRTpHsLyQd2EbOTXQgyeB7VtK9sBOKpOwhBS4KoxqExBf/yiCrPpG0tv26LibPzmyjzJZJPjyyjZOakbrvl+ZGRFQv7g17FxGYZEXRBYTmouO9JqeLXkoqBfAOcuA+Gn5TKh6w4QyWC6eGuKjJIivGaTQUAD5xEXGciXpuKmARgfVXgFAViE034bjilDTH12RArje2zyYk5mzDBO2W9aBln5aS9jMBTJCMyjbNzIABsvEM2TjvIqVeAnJnmwHsRVa9dYe9zmIKKFsA2d5WP2qyiohbQMJ2a/JJUqqGNoy7XlB1Di8FXg+nvOpLTDFhJ5EUSUj0R9K7fMZSpOmzUZiM9QS31frjLAa2MGL1wHY06p5MuitNABOmG1DA+f6DGZgB6dzFj0bnJEF45wOJJX2T9FPSJ9vvZ0C2c5JJRid+YEkYMCePYDV1DeQa2k58guD1E9uHM5UxO1xkx8OZaIxAf3cl0OwWzhVzaZuiphrOeX8LV81FNrZxd80O5MLWozNR9a99n+QLuAcAqvj/N2M1oTQXoF+SXuxwx7NiMARXxvgdP5AGXWk0bgIUmb5UxSDdE5JKepZLtsl+9C9RlYwZKX97GL7HOS/dBphz2l+zKVwNV8G56wAAAABJRU5ErkJggg==);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Radiolist-img .bk {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
 }
 body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Radiolist-content {
   float: right;
@@ -389,4 +503,243 @@ body #index .body-index .body-souye .souye-content .souye-Radiolist ul li a .Rad
 }
 body #index .body-index .body-souye .souye-content .souye-Radiolist ul li:last-child .Radiolist-content {
   border: none;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet {
+  width: 100%;
+  background: #FFFFFF;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet .songSheet-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #CCCCCC;
+  margin-bottom: 1px;
+  position: relative;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet .songSheet-title h3 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 400;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet .songSheet-title h3 span {
+  padding-left: 15px;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet .songSheet-title img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li {
+  width: 100%;
+  height: 80px;
+  margin-bottom: 1px;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-left {
+  width: 20%;
+  height: 100%;
+  float: left;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-left img {
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-right {
+  width: 75%;
+  height: 100%;
+  float: right;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-right p:first-child {
+  font-size: 16px;
+  color: #333333;
+  padding-top: 20px;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-right p {
+  color: #999999;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-right p .download {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAB2UlEQVQ4T62UQW6bUBRF7/tQqcNkB3QHeFhVAbIDZwVNdtDMotQDqkKUWegKmh2kXYGxpSpDfldQewfOrLKDb/V/AiXGmAzMDPE5/9737nuCPT+yZx46gf79hYelE0KJZy4VSl4EXyd9AlpA/9elj1LdCBABnBMys0AgJLGAQqaPki9d4BdAf3p5CqobCCdwGOsPV7r60R/HB3CWQ6FkFClQuif6OF5sgmugUSalKgie6yDNuhSYUsjK/UHgjw6Sk07gYPp5RiDXQXraV6f/l6/PdHB12zxvFfrT0VCAO5bu4TYbtW1T37U60EdJ7k9GGcBQh+mgDTQfhZ4O0mGnVQN7VGMIfxoXtcoNEZXCHESuwyS2iu8vPP3+2nbXvj/DRDBn6UaVi8F0RAqOjeLq7Fbgcz3HOkjPbHfVqhCRhybMALqBG5ZNfATqO8FbEL4A77h+4zXr22e51RQLpdj40GXUzKQtw2SUiSAqgsRvNeVJvo2NtVnXzozf37eLzc73xqYqvA028UmHybddwcbSuYNgvi0VrdGrR8tZn7dGTz1+BBBD8BulO9w5ei8iUqrsaRlwBqmXQwTygZCsitc2F7vX10pFoLLrCwp5M2+v2jZ9M/ya73vf2P8Ayq4RJBAgzmYAAAAASUVORK5CYII=);
+  vertical-align: middle;
+}
+body #index .body-index .body-souye .souye-content .souye-songSheet ul li a .Sheet-right .rightArrow {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  width: 20px;
+}
+body #index .body-index .body-souye .souye-content .music-banner {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+}
+body #index .body-index .body-souye .souye-content .music-banner .banner-hua {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  left: 0;
+  top: 0;
+  transition: left 2s;
+  /* Firefox 4 */
+  -moz-transition: left 2s;
+  /* Safari and Chrome */
+  -webkit-transition: left 2s;
+  /* Opera */
+  -o-transition: left 2s;
+}
+body #index .body-index .body-souye .souye-content .music-banner .banner-hua .banner-img {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  top: 0;
+  left: 0;
+}
+body #index .body-index .body-souye .souye-content .music-banner .banner-hua .banner-img span {
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+}
+body #index .body-index .body-souye .souye-content .banner-list {
+  width: 100%;
+  background: #FFFFFF;
+}
+body #index .body-index .body-souye .souye-content .banner-list ul {
+  padding: 10px 0;
+}
+body #index .body-index .body-souye .souye-content .banner-list ul li {
+  width: 33%;
+  float: left;
+  margin: 10px 0;
+}
+body #index .body-index .body-souye .souye-content .banner-list ul li a {
+  color: #333333;
+}
+body #index .body-index .body-souye .souye-content .banner-list ul li a img {
+  width: 25px;
+  margin: 0 5px 0 15%;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation {
+  width: 100%;
+  background: #FFFFFF;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation .recommendation-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation .recommendation-title h3 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 400;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation .recommendation-title img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li {
+  float: left;
+  width: 33.3%;
+  margin: 15px 0;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li a {
+  width: 99%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li a > img {
+  width: 100%;
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li a p {
+  height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding: 0 3px;
+  color: #333;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li a span {
+  position: absolute;
+  top: 75px;
+  left: 5px;
+  color: #FFFFFF;
+  font-size: 12px;
+}
+body #index .body-index .body-souye .souye-content .banner-recommendation ul li a span img {
+  width: 15px;
+  margin-right: 5px;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday {
+  width: 100%;
+  background: #FFFFFF;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday .everyday-title {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: relative;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday .everyday-title h3 {
+  font-size: 18px;
+  color: #333333;
+  font-weight: 400;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday .everyday-title img {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li {
+  width: 100%;
+  height: 80px;
+  padding-bottom: 5px;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a .everyday-left {
+  float: left;
+  width: 20%;
+  height: 100%;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a .everyday-left img {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a .everyday-right {
+  width: 75%;
+  height: 100%;
+  float: right;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a .everyday-right p:first-child {
+  padding-top: 20px;
+  font-size: 16px;
+  color: #333333;
+}
+body #index .body-index .body-souye .souye-content .banner-everyday ul li a .everyday-right p:last-child {
+  color: #999999;
 }

@@ -325,7 +325,7 @@ class Souye extends React.Component {
         };
     };
     componentWillMount (){
-        this.switch("music");
+        this.switch("my");
     };
     changPlay (playControls){
         this.setState({
